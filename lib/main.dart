@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//adding commit on new branch
+// This is a simple Flutter app that tracks baby activities and vaccinations.
 void main() => runApp(const BabyTrackerApp());
 
 class BabyTrackerApp extends StatefulWidget {
@@ -28,7 +30,11 @@ class TrackerDashboard extends StatefulWidget {
   final bool isDayTheme;
   final VoidCallback toggleTheme;
 
-  const TrackerDashboard({super.key, required this.isDayTheme, required this.toggleTheme});
+  const TrackerDashboard({
+    super.key,
+    required this.isDayTheme,
+    required this.toggleTheme,
+  });
 
   @override
   State<TrackerDashboard> createState() => _TrackerDashboardState();
@@ -49,19 +55,27 @@ class _TrackerDashboardState extends State<TrackerDashboard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text("BabyLog", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                const Text(
+                  "BabyLog",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(widget.isDayTheme ? Icons.wb_sunny : Icons.nights_stay),
+                      icon: Icon(
+                        widget.isDayTheme ? Icons.wb_sunny : Icons.nights_stay,
+                      ),
                       onPressed: widget.toggleTheme,
                     ),
                   ],
-                )
+                ),
               ],
             ),
             const SizedBox(height: 20),
-            const Text("24-HOUR TIMELINE", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+            const Text(
+              "24-HOUR TIMELINE",
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 8),
             Expanded(
               child: ListView.separated(
@@ -94,7 +108,10 @@ class _TrackerDashboardState extends State<TrackerDashboard> {
             children: const [
               Icon(Icons.medical_services, size: 56, color: Colors.white70),
               SizedBox(height: 16),
-              Text('Vaccine', style: TextStyle(fontSize: 22, color: Colors.white)),
+              Text(
+                'Vaccine',
+                style: TextStyle(fontSize: 22, color: Colors.white),
+              ),
               SizedBox(height: 8),
               Text(
                 'Vaccination records and reminders will appear here.',
@@ -117,7 +134,10 @@ class _TrackerDashboardState extends State<TrackerDashboard> {
         onTap: _onTap,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.medical_services), label: 'Vaccine'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.medical_services),
+            label: 'Vaccine',
+          ),
         ],
       ),
     );
